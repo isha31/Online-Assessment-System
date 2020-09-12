@@ -1,0 +1,60 @@
+<hr>
+<div class="container-fluid">
+    <h3> Add/ Modify / Delete </h3>
+    <hr>
+    <!-- <app-category-component></app-category-component> -->
+     <div>
+      <tabset>
+        <tab title="Category" >
+          <app-category-component></app-category-component>
+        </tab>
+        <tab title="Sub Category">
+         <app-subcategory></app-subcategory>
+        </tab>
+        <tab title="Topics">
+          <app-topics></app-topics>
+        </tab>
+      </tabset>
+    </div> 
+    <br>
+    <br>
+    <hr>
+<h3>UPLOAD QUESTION SET</h3>
+<hr>
+<div class="row">
+<div class="form-group col-md-4">
+  <label for="power">Select Category</label>
+  <select class="form-control"
+          [(ngModel)]="Category">
+    <option *ngFor="let Cat of categoryData" [value]="Cat.CategoryID">
+        {{ Cat.CategoryName }}</option>
+      </select>
+</div>
+
+<div class="form-group col-md-4">
+  <label for="power">Select SubCategory</label>
+  <select class="form-control"
+          [(ngModel)]="SubCategory">
+          <option *ngFor="let subCat of filterSubById(Category)" [value]="subCat.SubCategoryID">
+              {{ subCat.SubCategoryName }}</option>
+  </select>
+</div>
+<div class="form-group col-md-4">
+  <label for="power">Select Topic</label>
+  <select class="form-control"
+          [(ngModel)]="Topic">
+          <option *ngFor="let top of filterTopicById(SubCategory)" [value]="top.TopicID">
+              {{ top.TopicName }}</option>
+  </select> 
+</div>
+
+</div>
+<hr>
+<div class="form-group col-md-4">
+    <form #excelForm=ngForm>
+    <p>Upload excel file : </p>
+    <input type="file" (change)="selectFile($event)" #Excel accept=".csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+  <button class="btn btn-primary" (click)="OnSubmit(Topic)" type="button">Export</button>
+  </form>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+.sidenav {
+    width: 300px;
+    position: absolute;
+    z-index: 1;
+    top:350px;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    
+    padding-right: 20px;
+    
+}
+
+.sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: black;
+}
+
+.main {
+    /* Same as the width of the sidenav */
+    margin-left: 300px;
+    margin-top: -10px;
+    border-left: solid 1px #9b9b9bbf;
+    padding-left: 100px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.catlabel{
+    font-size: 25px;
+    color: #2185d0;
+    font-weight: 500;
+    border-left: 3px #2185d0 solid;
+    padding-left: 13px;
+}
+
+.searchbar{
+    width: 700px;
+    height: 3.5rem;
+}
+
+.w-75 {
+    width: 90%!important;
+}
+
+@media only screen and (max-width: 600px) {
+     .sidenav{
+        display: none;
+    }
+    .main{
+      margin-left: 10px; 
+      margin-top : 0px; 
+    }
+    .searchbar{
+        width: 280px;
+    }
+}

@@ -1,0 +1,166 @@
+<!-- <div class="container" style="padding-top:50px">
+<div class="card">
+  <div class="card-header">
+    Register
+  </div>
+  <div class="card-body">
+    <form  [formGroup]="signupForm"   (ngSubmit)="onSubmit()"  #signupform="ngForm">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="">First Name</label>
+          <input type="text" class="form-control" placeholder="First Name"  formControlName="fname" >
+          <span *ngIf="signupForm.get('fname').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="">Last Name</label>
+          <input type="text" class="form-control" placeholder="Last Name" formControlName="lname">
+          <span *ngIf="signupForm.get('lname').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Email ID</label>
+        <input type="email" class="form-control" id="" placeholder="john@mail.com" formControlName="email">
+        <span *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched " class="help-block"> Please enter Valid Email</span>  
+      </div>
+      <div class="form-group">
+        <label for="">Contact Number</label>
+        <input type="text" class="form-control" id="" placeholder="Contact Number" formControlName="contactnumber">
+        <span *ngIf="signupForm.get('contactnumber').invalid && signupForm.get('contactnumber').touched " class="help-block"> Please Enter Valid Phone Number</span>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="">DOB</label>
+          <input type="date" class="form-control" id="" placeholder="DD/MM/YYYY" formControlName="dob">
+          <span *ngIf="signupForm.get('dob').invalid && signupForm.get('dob').touched " class="help-block"> Please Enter Valid DOB</span>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="">Country</label>
+          <input type="text" class="form-control" id="" placeholder="Country" formControlName="country">
+          <span *ngIf="signupForm.get('country').invalid && signupForm.get('country').touched " class="help-block"> Please Enter Valid Country</span>
+        </div>        
+      </div>
+      <div class="form-group form-row">
+         <div class="col-sm-2"><label for="">Gender</label></div> 
+         <div class="radio col-sm-2" *ngFor="let gender of genders, index as i" >
+          <label>
+            <input
+              type="radio"
+              formControlName="gender"
+              [value]="i">{{ gender }}
+          </label>
+        </div>
+      </div>
+      <span *ngIf="signupForm.get('fname').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+      <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="">Password</label>
+            <input type="password" class="form-control" id="" placeholder="Password" formControlName="password">
+            <span
+            *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched "
+            class="help-block">Invalid Password , 1 UpperCase char, 1 lowerCase char, 1 digt and special char !</span> 
+          </div>
+          <div class="form-group col-md-6">
+            <label for="">Confirm Password</label>
+            <input type="password" class="form-control" id="" placeholder="Confirm Password" formControlName="confirmPassword">
+            <span
+            *ngIf="signupForm.errors?.misMatch && signupForm.get('confirmPassword').touched "
+            class="help-block"> Password and Confirm Password does not match!</span> 
+          </div>        
+      </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+  </div>
+</div>
+</div> -->
+
+                    <div id="myModal" style="margin-top:30px;" >
+                         <div class="modal-dialog modal-login" style="width:100%;margin-top:0px; ">
+                             <div class="modal-content"  style="border-left: 5px solid blue;">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Signup</h4>                                 
+                                        </div>
+                                        <div class="modal-body">
+                                               <form  [formGroup]="signupForm"   (ngSubmit)="onSubmit()"  #signupform="ngForm" >
+                                                    <div class="form-group">
+                                                        <i class="fa fa-user"></i>
+                                                        <input type="text" name="firstname" class="form-control" placeholder="First Name"  formControlName="fname">
+                                                        <span *ngIf="signupForm.get('fname').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <i class="fa fa-user"></i>
+                                                      <input type="text" name="lasatname" class="form-control"  placeholder="Last Name" formControlName="lname">
+                                                      <span *ngIf="signupForm.get('lname').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <i class="fa fa-envelope"></i>
+                                                        <input type="email" name="email" class="form-control" placeholder="john@mail.com" formControlName="email">
+                                                        <span *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched " class="help-block"> Please enter Valid Email</span>  
+                                                        <span *ngIf="signupForm.get('email').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <i class="fa fa-phone"></i>
+                                                      <input type="text" class="form-control" placeholder="Contact Number" formControlName="contactnumber">
+                                                      <span *ngIf="signupForm.get('contactnumber').invalid && signupForm.get('contactnumber').touched " class="help-block"> Please Enter Valid Phone Number</span>
+                                                      <span *ngIf="signupForm.get('contactnumber').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="">DOB</label>
+                                                      <div>
+                                                      <i class="fa fa-calendar" style="top:35px"></i>
+                                                      <input type="date" class="form-control"  placeholder="DD/MM/YYYY" formControlName="dob">
+                                                      <span *ngIf="signupForm.get('dob').invalid && signupForm.get('dob').touched " class="help-block"> Please Enter Valid DOB</span>
+                                                      <span *ngIf="signupForm.get('dob').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+
+                                                      </div> 
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <i class="fa fa-globe"></i>
+                                                        <input type="text" class="form-control"  placeholder="Country" formControlName="country">
+                                                        <span *ngIf="signupForm.get('country').invalid && signupForm.get('country').touched " class="help-block"> Please Enter Valid Country</span>
+                                                        <span *ngIf="signupForm.get('country').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+                                                    </div>
+                                                    <div class="form-group form-row">
+                                                        <div class="col-sm-2"><label for="">Gender</label></div> 
+                                                        <div class="radio col-sm-2" *ngFor="let gender of genders, index as i" >
+                                                         <label>
+                                                           <input
+                                                             type="radio"
+                                                             formControlName="gender"
+                                                             [value]="i">{{ gender }}
+                                                         </label>
+                                                       </div>
+                                                    </div>
+                                                    <span *ngIf="signupForm.get('gender').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+                                                    <div class="form-group">
+                                                        <i class="fa fa-key"></i>
+                                                        <input type="password" class="form-control"  placeholder="Password" formControlName="password">
+                                                        <span
+                                                        *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched "
+                                                        class="help-block">Invalid Password , 1 UpperCase char, 1 lowerCase char, 1 digt and special char !</span> 
+                                                        <span *ngIf="signupForm.get('password').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <i class="fa fa-key"></i>
+                                                        <input type="password" class="form-control"  placeholder="Confirm Password" formControlName="confirmPassword">
+                                                        <span
+                                                        *ngIf="signupForm.errors?.misMatch && signupForm.get('confirmPassword').touched "
+                                                        class="help-block"> Password and Confirm Password does not match!</span> 
+                                                        <span *ngIf="signupForm.get('confirmPassword').errors['required']  && signupform.submitted" class="help-block">This field is required!</span>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <!-- <input type="submit" class="btn btn-primary btn-block btn-lg" value="Send" id="sendbtn" style="background:4fb1e0;">   -->
+                                                        <button class="btn btn-primary btn-block btn-lg" type="submit" style="background:4fb1e0;">Register</button>              
+                                                    </div>
+                                               </form> 
+                                           </div>   
+                              </div>    
+                                               
+                                          
+                                       
+                           </div>                                        
+                   </div>
+                   
+                   
+

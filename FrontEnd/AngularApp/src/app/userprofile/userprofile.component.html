@@ -1,0 +1,73 @@
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid user">
+<div class="row">
+  <div class="col-sm-4">
+<div class="card">
+  <img src="https://www.epay.com/cn/templates/Epay.cn/assets/images/avatar.jpg" alt="John" style="width:50%; height:50%;">
+<br>
+  <h4>{{userData.FirstName}}  {{userData.LastName}}</h4>
+  <p>Email Address : {{userData.EmailID}}</p>
+ <p>First Name : {{userData.FirstName}}</p>
+ <p>Last Name : {{userData.LastName}}</p>
+ <p>Date Of Birth : {{userData.DOB|date}}</p>
+ <p>Contact No : {{userData.ContactNo}}</p>
+ 
+ <p>Country : {{userData.Country}}</p>
+     
+ <p><button id="userprofile"></button></p>
+</div>
+</div> 
+<div class="col-sm-8">
+    <div class="row" style="border: 2px solid #ccc;
+    border-radius: 5px;margin-top:5%;width:98%;height:26%;">
+<div class="col-sm-6">
+<div class="chart-container">
+    <canvas  
+        baseChart
+        [chartType]="'pie'"
+        [datasets]="pieChartData"
+        [labels]="pieChartLabels"
+        [options]="pieChartOptions"
+        [legend]="true"
+        [colors]="pieChartColor"
+        (chartClick)="onChartClick($event)">
+    </canvas>
+  </div>
+</div>
+<div class="col-sm-6" style="padding-left: 20px;" >
+<p><span>Strengths : </span> </p><p >Array in Java</p>
+<p><span>Weakness : </span></p><p > Classess in Java</p>
+<button class="viewmore btn btn-primary" style="margin-top: 6%" [routerLink] ="['/reports']">View More</button>
+</div>
+  </div>
+        <div class="row" style="border: 2px solid #ccc;
+        border-radius: 5px;margin-top:5%;width:98%;height: 33%">
+<div class="col-sm-12" style="padding-left: 20px;overflow-y: scroll;">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Topic Name</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Score</th>   
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usr of userLog;">
+            <td>{{ usr.TestDate | date }}</td>
+            <td>{{ usr.TopicName }}</td>
+            <td>{{ usr.StartTime }}</td>
+            <td>{{ usr.EndTime  }}</td>
+            <td>{{ usr.MarksObtained }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+      </div>
+    </div>
+</div>
+</div>

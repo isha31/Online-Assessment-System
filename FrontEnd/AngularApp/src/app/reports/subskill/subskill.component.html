@@ -1,0 +1,18 @@
+<br>
+<br>
+<br>
+<div style="position: relative; height:40%; width:90%" class="container">
+  <canvas style="position: relative; height:50%; width:90%"
+      baseChart
+      [chartType]="'horizontalBar'"
+      [datasets]="pieChartData"
+      [labels]="pieChartLabels"
+      [options]="pieChartOptions"
+      [legend]="false"
+      [colors]="pieChartColor"
+      (chartClick)="onChartClick($event)">
+  </canvas>
+</div>
+<br>
+<br>
+<br>

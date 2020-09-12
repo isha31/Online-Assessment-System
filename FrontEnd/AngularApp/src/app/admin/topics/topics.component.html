@@ -1,0 +1,58 @@
+
+        <div class="container">
+            <div class="reglist">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Topic Name</th>
+                    
+                    <th>Sub Category Name</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let topic of topicList; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ topic.TopicName }}</td>
+                    <td>{{topic.SubCategoryName}}</td>
+                    <td>
+                      <button type="button" class="btn btn-info" (click)="onEdit(i)">Edit</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="text-right">
+                <button type="submit" class="btn btn-primary" (click)="onNew()">New</button>
+              </div>
+            </div>
+            <br>
+            <div class="catentry" *ngIf="showNew">
+              <form (ngSubmit)="onSave()">
+                <div class="form-group row">
+                    <label for="subcatname-input" class="col-2 col-form-label">SubCategory Name</label>
+                    <div class="col-10">
+                    <select class="form-control"
+                            [(ngModel)]="SubCategory" name="subcatID">
+                      <option *ngFor="let SubCat of subcategoryData" [value]="SubCat.SubCategoryID">
+                          {{ SubCat.SubCategoryName }}</option>
+                        </select>
+                    </div><br><br>
+                  <label for="topicname-input" class="col-2 col-form-label">Topic Name</label>
+                  <div class="col-10">
+                    <input class="form-control" type="text" [(ngModel)]="topicModel.TopicName" name="topicName">
+                  </div>
+               
+                </div>
+
+                <button type="submit" class="btn btn-success" style="margin-right:3%">{{submitType}}</button>
+                <button type="submit" class="btn btn-primary" (click)="onCancel()">Cancel</button>
+              </form>
+            </div>
+          </div>
+          
+
+

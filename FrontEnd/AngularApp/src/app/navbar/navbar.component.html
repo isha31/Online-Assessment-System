@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" >
+  <a class="navbar-brand" href="#">OAS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Categories
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Technical</a>
+          <a class="dropdown-item" href="#">Aptitude</a>
+          <a class="dropdown-item" href="#">Psychometric</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/categories/testall']">Test Catalog</a>
+      </li>  
+    </ul>
+    <ul class="navbar-nav" *ngIf=" user == null "> 
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/signin']">Login</a>
+        </li>
+        <li class="nav-item">
+           <a class="nav-link" [routerLink]="['/signup']">Register</a>
+        </li>
+    </ul>
+
+    <!-- <ul class="navbar-nav" *ngIf=" user == 'johnadmin@gmail.com'"> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+          {{ user }}
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" [routerLink] ="['/admin']">Admin Dashboard</a>
+
+          <a class="dropdown-item" (click)="logout()">LogOut</a>
+        </div>
+      </li>
+  </ul>  -->
+
+
+    <ul class="navbar-nav" *ngIf=" user != null "> 
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+              {{ user }}
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" [routerLink] ="['/userprofile']">Profile</a>
+              <a class="dropdown-item" [routerLink] ="['/reports']" >Reports</a>
+              <a class="dropdown-item" (click)="logout()">LogOut</a>
+            </div>
+          </li>
+  </ul>
+  
+  </div>  
+</nav>

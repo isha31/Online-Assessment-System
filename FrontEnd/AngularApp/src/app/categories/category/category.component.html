@@ -1,0 +1,234 @@
+
+<div class="sidenav" style="padding-left:30px">  
+       
+        
+        <h3><i class="fa fa-filter" style="padding-right:10px;margin-bottom: 10px"></i>Filter</h3>
+       
+        <!-- // filter for  in Mode 0 when Nothing selected.  -->
+
+        <div class="form-group" *ngIf="mode == 0" >
+        <label class="control-label dash-control-label col-xs-3">Choose Category:</label>
+        <div class="col-xs-9">
+          <select [(ngModel)]="Category" class="custom-select custom-select-md">        
+              <option [value]="00">Select</option>
+              <option *ngFor="let cat of categoryData" [value]="cat.CategoryID">
+                  {{ cat.CategoryName }} </option>
+          </select> 
+        </div>
+        </div>    
+        
+        <div class="form-group" *ngIf="mode == 0" >
+            <label class="control-label dash-control-label col-xs-3">Choose SubCategory:</label>
+        <div class="col-xs-9">
+          <select [(ngModel)]="SubCategory" class="custom-select custom-select-md">
+             
+              <option [value]="00">Select</option>
+              <option *ngFor="let subCat of filterSubById(Category)" [value]="subCat.SubCategoryID">
+                  {{ subCat.SubCategoryName }} </option>
+          </select> 
+         </div>
+        </div>
+
+        <div class="form-group" *ngIf="mode == 0">
+            <label class="control-label dash-control-label col-xs-3">Choose  Topic:</label>
+        <div class="col-xs-9">
+          <select [(ngModel)]="Topic" class="custom-select custom-select-md">
+              <option [value]="00">Select</option> 
+            <option *ngFor="let top of filterTopicById(SubCategory)" [value]="top.TopicID">
+                  {{ top.TopicName }} </option>
+          </select> 
+         </div>
+        </div>
+       
+      <!-- // filter for topic in Mode 1 when subtopic selected.  -->
+      <div class="form-group" *ngIf="mode == 1">
+      <label class="control-label dash-control-label col-xs-3">Choose  Topic:</label>
+      <div class="col-xs-9">
+        <select [(ngModel)]="Topic" class="custom-select custom-select-md">
+            <option [value]="00">Select</option> 
+          <option *ngFor="let top of filterTopicById(subcatid)" [value]="top.TopicID">
+                {{ top.TopicName }} </option>
+        </select> 
+       </div>
+      </div>
+      
+        <br> 
+       
+        <p class="catlabel">Categories</p>
+        
+  <a *ngFor="let cat of categoryData" >{{ cat.CategoryName }}</a>
+</div>
+
+<div class="jumbotron" style="background:steelblue;border-bottom: 2px solid #9b9b9bbf;padding-bottom: 40px;">
+     
+     <h4 class="text-center display-3" style="padding-bottom:20px;color : white;padding-top:0px;"> Tests Catalog </h4>
+     <div class="ui search">
+        <div class="ui icon input" style="padding-left:20%;">
+          <input [(ngModel)]="SearchKey" class="prompt searchbar shadow-lg p-3 mb-5 bg-white rounded" type="text" placeholder="Search" autofocus>
+          <i class="search icon" style="color:#058cec;font-size: 2rem;line-height: 0px;width:50px;height: 80px;" ></i>
+        </div>
+        <div class="results"></div>
+    </div>
+</div>
+
+<div class="main" style=""> 
+  
+ 
+  <div class="containter">
+
+  <!-- // List of all Topics in Mode 0 , Can be filtered with Search Bar.     -->
+  <div *ngIf="Topic== 0 && mode == 0"><h1>No filter </h1>
+
+    <div class="ui card segment w-75 raised" *ngFor="let top of topicData | topicFilter : SearchKey" style="border-bottom: solid 2px #198f35!important;">
+      <div class="content">
+        <div class="right floated"><a class="ui green right ribbon label">Easy</a></div>
+        <h3>{{ top.TopicName }}</h3>
+        <div class="meta" style="font-size: 1.3em;color: rgba(0, 0, 0, 0.84);">
+          Subcategory: 
+          {{ (subcategoryoftopic(top.SubCategoryID)) }}
+        </div>
+      </div>
+      <div class="image">
+        <img>
+      </div>
+      <div class="extra content">
+        <button class="ui blue button right floated" [routerLink]="['/test', top.TopicID]" [queryParams]="{Difficulty: '1'}">Take Test</button>
+      </div>
+    </div> 
+    <div class="ui card segment w-75 raised" *ngFor="let top of topicData | topicFilter : SearchKey" style="border-bottom: solid 2px yellow!important;">
+        <div class="content">
+          <div class="right floated"><a class="ui yellow right ribbon label">Medium</a></div>
+          <h3>{{ top.TopicName }}</h3>
+          <div class="meta" style="font-size: 1.3em;color: rgba(0, 0, 0, 0.84);">
+            Subcategory:
+            {{ (subcategoryoftopic(top.SubCategoryID)) }}
+          </div>
+        </div>
+        <div class="image">
+          <img>
+        </div>
+        <div class="extra content">
+          <button class="ui blue button right floated" [routerLink]="['/test', top.TopicID]" [queryParams]="{Difficulty: '2'}">Take Test</button>
+        </div>
+      </div>
+      <div class="ui card segment w-75 raised" *ngFor="let top of topicData | topicFilter : SearchKey" style="border-bottom: solid 2px red!important;">
+          <div class="content">
+            <div class="right floated"><a class="ui red right ribbon label">Hard</a></div>
+            <h3>{{ top.TopicName }}</h3>
+            <div class="meta" style="font-size: 1.3em;color: rgba(0, 0, 0, 0.84);">
+              Subcategory:
+              {{ (subcategoryoftopic(top.SubCategoryID)) }}
+            </div>
+          </div>
+          <div class="image">
+            <img>
+          </div>
+          <div class="extra content">
+            <button class="ui blue button right floated" [routerLink]="['/test', top.TopicID]" [queryParams]="{Difficulty: '3'}">Take Test</button>
+          </div>
+        </div>
+  </div>
+
+  <!-- // List of Topic filtered with Subtopic in Mode 1 -->
+  <div *ngIf="Topic == 0">
+  <div class="ui card raised segment w-75" *ngFor="let top of filtertestbySubtopic(subcatid), index as i" style="border-bottom: solid 2px #198f35!important;">
+      <div class="content">
+        <div class="right floated"><a class="ui green right ribbon label">Easy</a></div>
+        <h3>{{ top.TopicName }}</h3>
+        <div class="meta" style="font-size: 1.3em;color: rgba(0, 0, 0, 0.84);">
+          Subcategory:
+          {{ (subcategoryoftopic(top.SubCategoryID)) }}
+        </div>
+      </div>
+      <div class="image">
+        <img>
+      </div>
+      <div class="extra content">
+        <button class="ui blue button right floated" [routerLink]="['/test', top.TopicID]" [queryParams]="{Difficulty: '1'}">Take Test</button>
+      </div>
+    </div>
+    <div class="ui card raised segment w-75" *ngFor="let top of filtertestbySubtopic(subcatid), index as i" style="border-bottom: solid 2px yellow!important;">
+        <div class="content">
+          <div class="right floated"><a class="ui yellow right ribbon label">Medium</a></div>
+          <h3>{{ top.TopicName }}</h3>
+          <div class="meta" style="font-size: 1.3em;color: rgba(0, 0, 0, 0.84);">
+            {{ (subcategoryoftopic(top.SubCategoryID)) }}
+          </div>
+        </div>
+        <div class="image">
+          <img>
+        </div>
+        <div class="extra content">
+          <button class="ui blue button right floated" [routerLink]="['/test', top.TopicID]" [queryParams]="{Difficulty: '1'}">Take Test</button>
+        </div>
+      </div>
+      <div class="ui card raised segment w-75" *ngFor="let top of filtertestbySubtopic(subcatid), index as i" style="border-bottom: solid 2px red!important;">
+          <div class="content">
+            <div class="right floated"><a class="ui red right ribbon label">Hard</a></div>
+            <h3>{{ top.TopicName }}</h3>
+            <div class="meta" style="font-size: 1.3em;color: rgba(0, 0, 0, 0.84);">
+              {{ (subcategoryoftopic(top.SubCategoryID)) }}
+            </div>
+          </div>
+          <div class="image">
+            <img>
+          </div>
+          <div class="extra content">
+            <button class="ui blue button right floated" [routerLink]="['/test', top.TopicID]" [queryParams]="{Difficulty: '1'}">Take Test</button>
+          </div>
+        </div>
+  </div>
+
+   <!-- // List when filtered with Topic in Mode 0.  -->
+  <div class="ui card raised segment w-75" *ngFor="let top of filtertestbytopic(Topic), index as i" style="border-bottom: solid 2px #198f35!important;" >
+    <div class="content">
+      <div class="right floated"><a class="ui green right ribbon label">Easy</a></div>
+      <h3>{{ top.TopicName }}</h3>
+      <div class="meta" style="font-size: 1.3em;color: rgba(0, 0, 0, 0.84);">
+        Subcategory:
+        {{ (subcategoryoftopic(top.SubCategoryID)) }}
+      </div>
+    </div>
+    <div class="image">
+      <img>
+    </div>
+    <div class="extra content">
+      <button class="ui blue button right floated" [routerLink]="['/test', top.TopicID]" [queryParams]="{Difficulty: '1'}">Take Test</button>
+    </div>
+  </div>
+
+  <div class="ui card raised segment w-75" *ngFor="let top of filtertestbytopic(Topic), index as i" style="border-bottom: solid 2px yellow!important;">
+    <div class="content">
+      <div class="right floated"><a class="ui yellow right ribbon label">Medium</a></div>
+      <h3>{{ top.TopicName }}</h3>
+      <div class="meta" style="font-size: 1.3em;color: rgba(0, 0, 0, 0.84);">
+        Subcategory:
+        {{ (subcategoryoftopic(top.SubCategoryID)) }}
+      </div>
+    </div>
+    <div class="extra content">
+      <button class="ui blue button right floated" [routerLink]="['/test', top.TopicID]" [queryParams]="{Difficulty: '2'}">Take Test</button>
+    </div>
+  </div>
+
+  <div class="ui card raised segment w-75" *ngFor="let top of filtertestbytopic(Topic), index as i" style="border-bottom: solid 2px red!important;">
+    <div class="content">
+      <div class="right floated"><a class="ui red right ribbon label">Hard</a></div>
+      <h3>{{ top.TopicName }}</h3>
+      <div class="meta" style="font-size: 1.3em;color: rgba(0, 0, 0, 0.84);">
+        Subcategory:
+        {{ (subcategoryoftopic(top.SubCategoryID)) }}
+      </div>
+    </div>
+    <div class="image">
+      <img>
+    </div>
+    <div class="extra content">
+      <button class="ui blue button right floated" [routerLink]="['/test', top.TopicID]" [queryParams]="{Difficulty: '3'}">Take Test</button>
+    </div>
+  </div>
+</div>     
+      
+ 
+
+</div>

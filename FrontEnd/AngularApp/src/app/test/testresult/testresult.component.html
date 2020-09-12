@@ -1,0 +1,56 @@
+<div class="container" style="padding-top:130px">
+
+ <div class="row justify-content-center align-items-center">
+    <div class="red ui card w-75 shadow-lg p-3 mb-5 bg-white rounded" style="border-left: 5px #2185d0 solid;">
+      <div class="content" style="padding-left:25px">
+        <div class="header"><h1>Quiz Results</h1></div>
+        <div class="meta">Just Now</div>
+        <div class="card-body">
+           <div class="row" style="padding-bottom:10px">
+              <div class="col-sm-5">
+                  <h4> <i class="stopwatch icon" style="color : red"></i>   Time : </h4>
+              </div>
+              <div class="col-sm-5">
+                <h4> {{time}} Minutes</h4>
+              </div>
+           </div>
+           <div class="row" style="padding-bottom:10px">
+              <div class="col-sm-5">
+                  <h4> <i class="check icon" style="color:green"></i>   Correct Answers : </h4>
+              </div>
+              <div class="col-sm-5">
+                <h4>{{correctans}}</h4>
+              </div>
+           </div>
+           <div class="row" style="padding-bottom:10px">
+              <div class="col-sm-5">
+                <h4> <i class="times icon" style="color:red"></i>   InCorrect Answers : </h4>
+              </div>
+              <div class="col-sm-5">
+                <h4>{{wrongans}}</h4>
+              </div>
+           </div>
+           <div class="row" style="padding-bottom:10px">
+              <div class="col-sm-5">
+                <h4> <i class="times icon" style="color:red"></i>   Unattempted : </h4>
+              </div>
+              <div class="col-sm-5">
+                <h4>{{unattempted}}</h4>
+              </div>
+           </div>
+           <div class="row" style="padding-bottom:10px">
+              <div class="col-sm-5">
+                  <h4> <i class="chart pie icon" style="color: #2185d0"></i>   Marks : </h4>
+              </div>
+              <div class="col-sm-5">
+                <h4> {{marks}} / 10</h4>
+              </div>
+           </div>
+        </div>
+      </div>
+      <div class="extra content">
+        <button class="ui blue button right floated" [routerLink]="['/reports']">View All Reports</button>
+      </div>
+    </div>
+ </div>
+</div>

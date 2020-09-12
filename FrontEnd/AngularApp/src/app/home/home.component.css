@@ -1,0 +1,250 @@
+.card {
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    margin: 10% 0 0 10%;
+    font-family: arial;
+   
+  }
+  
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+
+  #userprofile {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+  }
+  
+  #userprofile:hover, a:hover {
+    opacity: 0.7;
+  }
+
+  h2{
+    text-align:center;
+    padding: 10%;
+  }
+  h4{
+    text-align:center;
+  }
+
+/* -------------------- */
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.63)), url(/assets/3.jpg);
+    height: 36vh;
+    background-size: cover;
+    position: relative;
+}
+
+  .typewriter p{
+    color: white;
+font-size: 50px;
+font-weight: lighter;
+font-family: 'Poppins', sans-serif;
+overflow:hidden; /* Ensures the content is not revealed until the animation */
+border-right: .15em solid orange; /* The typwriter cursor */
+white-space: nowrap; /* Keeps the content on a single line */
+margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+letter-spacing: .15em; /* Adjust as needed */
+animation: 
+typing 5.5s steps(60,start),
+blink-caret .75s step-end 12;
+} 
+
+/* The typing effect */
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: orange; }
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.hero-text > h4, .hero-text>h1{
+    color:white;
+}
+.hero-text>h1{
+    font-style: bold;
+}
+
+
+ @media (min-width: 576px) {
+     .border-sm-top {
+         border-top: 1px solid black!important;
+    }
+     .border-sm-right {
+         border-right: 1px solid black!important;
+    }
+     .border-sm-left {
+         border-left: 1px solid black!important;
+    }
+     .border-sm-bottom {
+         border-bottom: 1px solid black!important;
+    }
+     .border-sm-top-0 {
+         border-top:0!important;
+    }
+     .border-sm-right-0 {
+         border-right: 0!important;
+    }
+     .border-sm-left-0 {
+         border-left: 0!important;
+    }
+     .border-sm-bottom-0 {
+         border-bottom: 0!important;
+    }
+}
+ @media (min-width: 768px) {
+     .border-md-top {
+         border-top: 1px solid black!important;
+    }
+     .border-md-right {
+         border-right: 1px solid black!important;
+    }
+     .border-md-left {
+         border-left: 1px solid black!important;
+    }
+     .border-md-bottom {
+         border-bottom: 1px solid black!important;
+    }
+     .border-md-top-0 {
+         border-top:0!important;
+    }
+     .border-md-right-0 {
+         border-right: 0!important;
+    }
+     .border-md-left-0 {
+         border-left: 0!important;
+    }
+     .border-md-bottom-0 {
+         border-bottom: 0!important;
+    }
+}
+ @media (min-width: 992px) {
+     .border-lg-top {
+         border-top: 1px solid black!important;
+    }
+     .border-lg-right {
+         border-right: 1px solid black!important;
+    }
+     .border-lg-left {
+         border-left: 1px solid black!important;
+    }
+     .border-lg-bottom {
+         border-bottom: 1px solid black!important;
+    }
+     .border-lg-top-0 {
+         border-top:0!important;
+    }
+     .border-lg-right-0 {
+         border-right: 0!important;
+    }
+     .border-lg-left-0 {
+         border-left: 0!important;
+    }
+     .border-lg-bottom-0 {
+         border-bottom: 0!important;
+    }
+}
+ @media (min-width: 1200px) {
+}
+ 
+
+
+/* ------------------- */
+
+.testcatalog{
+    background:#0062cc;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    margin: 5% 0 0 40%
+  }
+  .testcatalog:hover{
+    background:#fff;
+    color:#0062cc;
+  }
+  .testcatalog:before,.testcatalog:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #0062cc;
+    transition:400ms ease all;
+  }
+  .testcatalog:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .testcatalog:hover:before,.testcatalog:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+
+  @media screen and (max-width: 992px) {
+    .testcatalog{
+       margin: 5% 32% 0 29%;
+       height: 69px;
+    }
+  }
+  
+  .blog .carousel-indicators {
+	left: 0;
+	top: auto;
+    bottom: -40px;
+
+}
+
+/* The colour of the indicators */
+.blog .carousel-indicators li {
+    background: #a3a3a3;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+}
+
+.blog .carousel-indicators .active {
+background: #707070;
+}
+
+.features{
+    text-align: center;
+    font-size: 2.75rem;
+    border-bottom: 1px solid black;
+    padding: 13px;
+}

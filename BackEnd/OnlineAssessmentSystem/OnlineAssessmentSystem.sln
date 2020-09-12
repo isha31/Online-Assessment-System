@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineAssessmentSystem", "OnlineAssessmentSystem\OnlineAssessmentSystem.csproj", "{6688CDAC-1999-4EFE-8494-54D8F00EDD3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineAssessmentSystem.Tests", "OnlineAssessmentSystem.Tests\OnlineAssessmentSystem.Tests.csproj", "{60313390-AA8C-408D-B4C5-00661D43104C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{3DFAA0E2-1006-49EA-8CA2-694741ACF13F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{9C66C76B-FFDE-4D22-B12C-A2ECAA245E8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{0085CBBE-F06B-4BBD-9CD8-72732B708156}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceRepository", "Interfaces\InterfaceRepository.csproj", "{AB9FACD3-CF46-4667-9FEF-EF4DBB358C3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6688CDAC-1999-4EFE-8494-54D8F00EDD3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6688CDAC-1999-4EFE-8494-54D8F00EDD3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6688CDAC-1999-4EFE-8494-54D8F00EDD3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6688CDAC-1999-4EFE-8494-54D8F00EDD3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60313390-AA8C-408D-B4C5-00661D43104C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60313390-AA8C-408D-B4C5-00661D43104C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60313390-AA8C-408D-B4C5-00661D43104C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60313390-AA8C-408D-B4C5-00661D43104C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DFAA0E2-1006-49EA-8CA2-694741ACF13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DFAA0E2-1006-49EA-8CA2-694741ACF13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DFAA0E2-1006-49EA-8CA2-694741ACF13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DFAA0E2-1006-49EA-8CA2-694741ACF13F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C66C76B-FFDE-4D22-B12C-A2ECAA245E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C66C76B-FFDE-4D22-B12C-A2ECAA245E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C66C76B-FFDE-4D22-B12C-A2ECAA245E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C66C76B-FFDE-4D22-B12C-A2ECAA245E8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0085CBBE-F06B-4BBD-9CD8-72732B708156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0085CBBE-F06B-4BBD-9CD8-72732B708156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0085CBBE-F06B-4BBD-9CD8-72732B708156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0085CBBE-F06B-4BBD-9CD8-72732B708156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB9FACD3-CF46-4667-9FEF-EF4DBB358C3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB9FACD3-CF46-4667-9FEF-EF4DBB358C3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB9FACD3-CF46-4667-9FEF-EF4DBB358C3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB9FACD3-CF46-4667-9FEF-EF4DBB358C3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://cel-tfs2017:8080/tfs/group-03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = OnlineAssessmentSystem.Tests\\OnlineAssessmentSystem.Tests.csproj
+		SccProjectName1 = OnlineAssessmentSystem.Tests
+		SccLocalPath1 = OnlineAssessmentSystem.Tests
+		SccProjectUniqueName2 = OnlineAssessmentSystem\\OnlineAssessmentSystem.csproj
+		SccProjectName2 = OnlineAssessmentSystem
+		SccLocalPath2 = OnlineAssessmentSystem
+		SccProjectUniqueName3 = Entities\\Entities.csproj
+		SccProjectName3 = Entities
+		SccLocalPath3 = Entities
+		SccProjectUniqueName4 = DataAccessLayer\\DataAccessLayer.csproj
+		SccProjectName4 = DataAccessLayer
+		SccLocalPath4 = DataAccessLayer
+		SccProjectUniqueName5 = BusinessLogicLayer\\BusinessLogicLayer.csproj
+		SccProjectName5 = BusinessLogicLayer
+		SccLocalPath5 = BusinessLogicLayer
+		SccProjectUniqueName6 = Interfaces\\InterfaceRepository.csproj
+		SccProjectName6 = Interfaces
+		SccLocalPath6 = Interfaces
+	EndGlobalSection
+EndGlobal

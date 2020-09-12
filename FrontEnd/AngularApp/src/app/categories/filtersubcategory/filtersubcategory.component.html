@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+          <div class="col" style="padding-top:90px;">
+              <div class="mx-auto  text-center">
+                      <h2 class="display-4" style="margin-top:0 0 2%;color:#02b3e4;">Dare to build your future </h2>
+                      <h4> What do you want to learn today? What is your dream ?</h4>
+                      <br><h4>Choose from below...</h4>
+              </div>
+          </div>
+  </div>
+
+  <div class="row" style="padding-top:30px; margin: 0 85px 0 85px;" >
+       <div class="col-sm-4" *ngFor="let subcat of subbycategory(subcategoryData), index as i" style="padding-bottom:20px;">
+              <a class="article image overlay"  [routerLink]="['/categories/testall']" [queryParams]="{subid : subcat.SubCategoryID }" >
+                  <div class="content">
+                   <h1> {{subcat.SubCategoryName}} </h1>                         
+                  </div>
+              </a>
+       </div>
+  </div>
+
+  <div class="row">
+          <div class="col" >
+              <div class="d-flex justify-content-center">                               
+                 
+                         
+                            <button class="testcatalog" [routerLink]="['/categories/testall']">Test Catalog</button>                          
+                          
+                 
+              </div>
+          </div>
+  </div>
+
+</div>   
+
+
+
+
+
+ 

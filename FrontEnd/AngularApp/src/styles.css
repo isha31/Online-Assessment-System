@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+#container {
+   min-height:85.3%;
+   position:relative;
+}
+#header {
+   
+   /* padding:10px; */
+}
+#body {
+   /* padding:10px; */
+   padding-bottom:60px;   /* Height of the footer */
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   /* height:60px;   Height of the footer */
+   
+}
+
+/* ============================== */
+.tab-set {
+    background:#FFF;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+  }
+  .tab-content {
+    padding:15px 15px 25px 15px;
+    text-align:center;
+  }
+  
+  .nav-tabs {
+    border-bottom:solid 2px #eee;
+    margin-bottom: 10px;
+  }
+  .nav-tabs > li.disabled:hover {
+    background: transparent;
+  }
+  .nav-tabs > li.disabled:hover > a {
+    margin-top: 1px;
+  }
+  .nav-tabs > li > a {
+    border: none;
+    color: #000;
+    background: transparent;
+    font-weight: 600;
+    opacity: .5;
+    outline: none;
+    box-shadow: none;
+    cursor:pointer;
+  }
+  .nav-tabs > li > a:hover {
+    border: none;
+    color: #fc5d44;
+    background: transparent;
+    opacity: 1;
+  }
+  .nav-tabs > li > a::after {
+    content: "";
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: -1px;
+    transition: all 250ms ease 0s;
+    transform: scale(0);
+    background: #fc5d44 none repeat scroll 0% 0%;
+    color: #fff;
+  }
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    border-width: 0;
+    opacity: 1;
+  }
+  .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after {
+    transform: scale(1);
+  }
+
+  .nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .nav-tabs > li {
+    float: left;
+    position: relative;
+    display: block;
+  }
+  
+  .nav-tabs > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+  }
+  
+  .btn-group-vertical>.btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
+    clear: both;
+  }
+  group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: table;
+    content: " ";
+  }
+
+
+  /* ----slider------------ */
+ 
+
+
+  /* ----------- */
