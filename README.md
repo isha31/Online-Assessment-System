@@ -2,7 +2,7 @@
 Online Assessment System using .NET framework and Angular 
 
 - Backend 
- .NET WEB API, MVC Layered Architecture, SSMS, UNIT TEST CASES. 
+ .NET WEB API, MVC Layered Architecture, MS SQL Server, unit test cases. 
 
 - Front END 
  Angular 4, Responsive Material UI 
