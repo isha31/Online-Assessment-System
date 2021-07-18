@@ -1,11 +1,11 @@
 # Online-Assessment-System-.NET-WEB-API-ANGULAR
-Minimal assessment System based on .NET framework and Angular 
+Online Assessment System using .NET framework and Angular 
 
 - Backend 
- .NET WEB API,Layered Architecture, SSMS, UNIT TEST CASES. 
+ .NET WEB API, MVC Layered Architecture, SSMS, UNIT TEST CASES. 
 
 - Front END 
- Angular 4, Responsive Material design, Proper Angular Routing-Modules-Components etc. 
+ Angular 4, Responsive Material UI 
 
 # Screenshots given below. 
 
